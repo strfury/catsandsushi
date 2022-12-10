@@ -7,4 +7,5 @@ Libraries: no additional libraries need to be installed.
 
 Shortcut commands:
 On the cooking screen, press the letter 'c' to add 20 cash to test out functions that require money.
+
 On the cooking screen, press any other key to immediately end the day.
