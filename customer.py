@@ -1,38 +1,33 @@
-import random
-from random import randrange
 from main import *
-
+from cooking import *
 class Cat():
     def __init__(self, happy, neutral, angry):
         self.happy = happy
         self.neutral = neutral
         self.angry = angry
-        self.moods = [happy, neutral, angry]
         self.image = happy
-        self.patience = 100
+        self.patience = 300
         #decrease at timer fired
         self.orderFulfilled = False
+
     def getOrder(self):
         return self.order
     def getPatience(self):
         return self.patience
+    def setPatience(self):
+        self.patience = 300
     def addOrder(self, order):
         self.order = order
     def changeImage(self, image):
         self.image = image
     def getImage(self):
         return self.image
-    def getMoods(self):
-        return self.moods
     def changeMood(self):
-        if self.patience < 25:
+        if self.patience < 100:
             self.changeImage(self.angry)
-        elif(self.patience < 75):
+        elif(self.patience < 200):
             self.changeImage(self.neutral)
-    def checkOrder(self, order):
-        if order == self.order:
-            #calcPrice 
-            self.orderFulfilled = True
-        else:
-            #calcwrongorder
-            self.orderFulfilled = True
+    def decPatience(self):
+        if self.patience >=3:
+            self.patience -= 3
+        self.changeMood()
